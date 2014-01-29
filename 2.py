@@ -1,4 +1,7 @@
 """
+http://docs.sqlalchemy.org/en/rel_0_9/orm/tutorial.html
+http://docs.sqlalchemy.org/en/rel_0_8/orm/query.html
+
 join: q = session.query(User).join(Address, User.id==Address.user_id)
 
 ---

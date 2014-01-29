@@ -4,18 +4,31 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
     </head>
     <body>
-    <button type="button" id="oneButton">Alert on Click</button>    
+    <button type="button" id="oneButton">Click Me</button>   
+    <button type="button" id="secondButton">Add </button>     
     <script>
     $(function() {
     
-      $( '#oneButton' ).bind('click', baz)
+      $( "#oneButton" ).bind('click', baz)
       function baz() {
         alert('hello');
-        url = 'http://192.168.1.100:8000/hello/world/'
+        url = 'http://localhost:8000/hello/world/'
         $.get(url, function(result) {
-            alert(result);
+            console.log(result);
+            alert(result)
         });
     }
+
+      $( "#secondButton" ).bind('click', function() {
+        url = 'http://localhost:8000/add/3/2/'
+        $.get(url, function(result) {
+            number = JSON.parse(result)
+            //console.log(result);
+            //alert(result)
+            alert("3 + 2 + 99 = " + (number+99));
+        });
+
+      });
     });
   </script>
 
