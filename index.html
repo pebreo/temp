@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <style>img{ height: 100px; float: left; }</style>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+    <button type="button" id="oneButton">Alert on Click</button>    
+    <script>
+    $(function() {
+    
+      $( '#oneButton' ).bind('click', baz)
+      function baz() {
+        alert('hello');
+        url = 'http://192.168.1.100:8000/hello/world/'
+        $.get(url, function(result) {
+            alert(result);
+        });
+    }
+    });
+  </script>
+
+    </body>
+</html>
